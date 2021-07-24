@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public List<GameObject> openedChests;
+    public List<string> openedChests;
 
     private void Awake()
     {
@@ -36,17 +35,6 @@ public class GameManager : MonoBehaviour
     public List<int> weaponPrices;
     public List<int> xpTable;
 
-    //Chests
-    public GameObject[] chest1;
-    public GameObject[] chest2;
-    public GameObject[] chest3;
-    public GameObject[] chest4;
-
-    public int numOfChest1;
-    public int numOfChest2;
-    public int numOfChest3;
-    public int numOfChest4;
-
     //Refrences
     public Player player;
     public Weapon weapon;
@@ -69,16 +57,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         cm.enabled = true;
-    }
-
-    public void SetArrays()
-    {
-        Debug.Log("SetArrays");
-
-        chest1 = GameObject.FindGameObjectsWithTag("Chests1");
-        chest2 = GameObject.FindGameObjectsWithTag("Chests2");
-        chest3 = GameObject.FindGameObjectsWithTag("Chests3");
-        chest4 = GameObject.FindGameObjectsWithTag("Chests4");
     }
 
     public void SetDamagePoint()
